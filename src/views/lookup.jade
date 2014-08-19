@@ -1,0 +1,36 @@
+div(ng-controller='siteLocatorController')
+	.row
+		.col-md-6
+			h1 Site Locator
+		.col-md-6
+			.location
+				dl.dl-horizontal
+					dt latitude
+					dd {{currentLocation.latitude}}
+					dt longitude	
+					dd {{currentLocation.longitude}}
+					dt address
+					dd {{currentAddress}}
+
+	p.error.bg-danger(ng-if='isError')  {{errorMessage}}
+
+	.row.well.well-sm 
+		form
+			.input-label.col-md-3.col-sm-12 Domain of the website to locate
+			.input-container.col-md-7.col-sm-9
+				input(class="form-control", ng-model='search', type="text", id='domainInput', placeholder="Enter Domain")
+				popup-menu.about
+					.popup-content 
+						h5 Enter host or IP address in a proper format, such as:
+						ul
+							li www.nytimes.com
+							li nytimes.com
+							li g1.com.br
+							li www.g1.com.br
+							li 74.125.228.197
+
+
+			.button-container.col-md-2.col-sm-3.col-xs-12
+				button.btn.btn-primary(ng-click='searchHost()') Locate in the world
+
+	.map(app-map, coords='searchLocation', title='locationName')

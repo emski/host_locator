@@ -1,0 +1,64 @@
+
+.app-popover{
+    position: relative;
+    top: 12px;
+    &.up {
+        top: -12px;
+    }
+    
+    .popover-wrap {
+        z-index: 5000;
+        background-color: white;
+        position: absolute;
+        border: 1px solid #f0f0f0;
+        box-shadow: 0px 5px 15px 0px rgba(0,0,0,.15);
+        cursor: default;
+    }
+    .popover-tip, .popover-tip {
+        // height: 12px;
+        width: 15px; 
+        margin-left: auto; 
+        margin-right: auto;
+        &.left {
+            margin-left: 15px; 
+        }
+        &.right {
+            margin-right: 15px; 
+        }
+        &:before, &:after {
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 0;
+        }
+    }
+    .popover-tip.up{
+        &:before {
+            top: -12px;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 12px solid #dddedf;
+        }
+        &:after {
+            top: -11px;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 12px solid white;
+        }
+    }
+    .popover-tip.down {
+        &:before {
+            bottom: -12px;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 12px solid #dddedf;
+        }
+        &:after {
+            bottom: -11px;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 12px solid white;
+        }
+    }
+
+}

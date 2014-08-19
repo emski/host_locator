@@ -1,0 +1,4 @@
+span.popup-menu.glyphicon.glyphicon-question-sign(app-clickaway='close()', ng-click='toggle()', style='position:relative; display:inline-block')
+	.content
+		app-popover(show='{{showContent}}', forceBottom='true')
+			div(ng-transclude='ng-transclude')

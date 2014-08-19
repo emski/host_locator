@@ -1,0 +1,5 @@
+.app-popover(ng-show='showPopover', float='{{float}}', ng-animate='fade', ng-class='{up:!!showUpwards}')
+    .popover-wrap(ng-class='float')
+        .popover-tip.up(ng-class='float', ng-hide='!!showUpwards')
+        .popover-content(ng-transclude='ng-transclude')
+        .popover-tip.down(ng-class='float', ng-hide='!showUpwards')
